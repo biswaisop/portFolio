@@ -5,6 +5,7 @@ import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Navlink from "../Navlink/Navlink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import Menuoverlay from "../menuOverlay/Menuoverlay";
 
 const navLinks = [
   {
@@ -63,6 +64,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+      {navbarOpen ? <Menuoverlay/>:null}
     </nav>
   );
 };
