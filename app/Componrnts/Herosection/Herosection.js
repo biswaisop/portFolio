@@ -1,37 +1,27 @@
-"use client"
-import { useState } from "react"
+"use client";
+import { useState } from "react";
 import React from "react";
 import Image from "next/image";
 import DesignerImage from "./images/file.png";
-import { TypeAnimation } from 'react-type-animation';
-import react from "react";
-
-
+import { TypeAnimation } from "react-type-animation";
 
 const Herosection = () => {
-  const [AnimationCount, setAnimationCount] = useState(0)
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-7 place-self-center text-center ml-4 lg:ml-8 sm:text-left">
           <h1 className="text-white mb-4 font-extrabold text-4xl lg:text-6xl">
-            {/* Wrap the text in the span for gradient effect */}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
               Hello, I'm {""}
             </span>
-            {AnimationCount < 1 &&  (
             <TypeAnimation
-      sequence={[
-        'Biswadip Mandal',
-        1000
-      ]}
-      wrapper="span"
-      speed={37}
-      repeat={2}
-    />)}
+              sequence={['Biswadip Mandal']}
+              wrapper="span"
+              speed={37}
+              repeat={0} // Animation runs once
+            />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            
             I am a Computer Science Engineering student in my first semester at
             RV Institute of Technology and Management (RVITM). I am passionate
             about learning web development, app development, and data science,
@@ -44,13 +34,13 @@ const Herosection = () => {
               Hire Me
             </button>
             <button className="px-1 py-1 w-full sm:w-fit rounded-full text-white font-bold bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Download CV</span>
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                Download CV
+              </span>
             </button>
           </div>
         </div>
         <div className="col-span-5 place-self-center ml-4 lg:ml-8 mt-6 sm:mt-0">
-          {" "}
-          {/* Added mt-6 on small screens */}
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] flex justify-center items-center relative">
             <Image
               src={DesignerImage}
