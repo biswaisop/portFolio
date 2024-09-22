@@ -65,7 +65,6 @@ const Navbar = () => {
         </div>
       </div>
       {navbarOpen ? <Menuoverlay/>:null}
-      //hi
     </nav>
   );
 };
