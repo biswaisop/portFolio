@@ -28,7 +28,7 @@ const Navbar = () => {
   const [navbarOpen, setnavbarOpen] = useState(false);
   const [AnimationCount, setAnimationCount] = useState(0);
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#121212] opacity-90 z-10 py-2">
+    <nav className="fixed top-0 left-0 right-0 bg-[#121212] opacity-90 sm:opacity-100 z-10 py-2">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
         <Link
           href={"/"}
