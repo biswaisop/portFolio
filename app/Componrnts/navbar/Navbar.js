@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl font-semibold font-mono bg-gradient-to-r md:px-9 from-blue-400 via-cyan-400 to-green-400 text-transparent bg-clip-text"
+          className="text-2xl md:text-5xl font-semibold font-mono font-semibold bg-gradient-to-r md:px-9 from-blue-400 via-cyan-400 to-green-400 text-transparent bg-clip-text"
         >
           {AnimationCount < 1 && (
             <TypeAnimation
