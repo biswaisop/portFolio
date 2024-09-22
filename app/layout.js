@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Biswadip Mandal",
-  description: "Welcome to my portfolio",
+  description: "Welcome to my portFolio",
 };
 
 export default function RootLayout({ children }) {
