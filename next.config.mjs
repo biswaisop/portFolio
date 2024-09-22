@@ -2,5 +2,6 @@
 const nextConfig = {
       output:"export"
 };
+//hello
 
 export default nextConfig;
