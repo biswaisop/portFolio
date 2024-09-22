@@ -12,7 +12,7 @@ const Herosection = () => {
         <div className="col-span-7 place-self-center text-center ml-4 lg:ml-8 sm:text-left">
           <h1 className="text-white mb-4 font-extrabold text-4xl lg:text-6xl">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-              Hello, I'm {""}
+              Hello, I&apos;m {""}
             </span>
             <TypeAnimation
               sequence={['Biswadip Mandal']}
@@ -25,7 +25,7 @@ const Herosection = () => {
             I am a Computer Science Engineering student in my first semester at
             RV Institute of Technology and Management (RVITM). I am passionate
             about learning web development, app development, and data science,
-            and I have gained some hands-on experience in web development. I'm
+            and I have gained some hands-on experience in web development. I&apos;m
             excited to continue expanding my skills and knowledge in these areas
             as I grow in my academic and professional journey.
           </p>
