@@ -6,13 +6,7 @@ const AboutSection = () => {
   return (
     <section className="text-white ">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image
-          src={aboutImage}
-          width={300}
-          height={300}
-          className="rounded-lg"
-          alt="About Image"
-        />
+        
         <div>
           <h1>About Me</h1>
           <p>
@@ -28,6 +22,13 @@ const AboutSection = () => {
             new challenges!
           </p>
         </div>
+        <Image
+          src={aboutImage}
+          width={300}
+          height={300}
+          className="rounded-lg"
+          alt="About Image"
+        />
       </div>
     </section>
   );
