@@ -14,10 +14,10 @@ const AboutSection = () => {
             Engineering student at RVITM. I'm passionate about web development
             and currently honing my skills with the MERN stack. I've already
             built several projects that showcase my ability to create responsive
-            and dynamic web applications. In addition to web development, I have
+            and dynamic web applications.</p> <p>In addition to web development, I have
             a strong foundation in Python, having created various projects that
             demonstrate my problem-solving skills. I'm also familiar with SQL,
-            which helps me manage and interact with databases efficiently. As I
+            which helps me manage and interact with databases efficiently.</p> <p> As I
             continue my journey in tech, I'm excited to learn, grow, and take on
             new challenges!
           </p>
