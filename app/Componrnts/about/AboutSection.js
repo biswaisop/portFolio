@@ -8,7 +8,7 @@ const AboutSection = () => {
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         
         <div>
-          <h1>About Me</h1>
+          <h1 className="font-xl">About Me</h1>
           <p>
             Hello! I'm Biswadip Mandal, a first-semester Computer Science
             Engineering student at RVITM. I'm passionate about web development
