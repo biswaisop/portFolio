@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import aboutImage from "./images/used.png";
-
+import Link from "next/link";
 
 const AboutSection = () => {
   return (
@@ -11,7 +11,7 @@ const AboutSection = () => {
         <div className="ml-4 lg:ml-8 mt-6 sm:mt-0">
           <Image
             src={aboutImage}
-            width={400}
+            width={500}
             height={400}
             className="rounded-lg"
             alt="About Image"
@@ -31,16 +31,36 @@ const AboutSection = () => {
             built several projects that showcase my ability to create responsive
             and dynamic web applications.
           </p>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            In addition to web development, I have a strong foundation in
-            Python, having created various projects that demonstrate my
-            problem-solving skills. I'm also familiar with SQL, which helps me
-            manage and interact with databases efficiently.
-          </p>
-          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl">
-            As I continue my journey in tech, I'm excited to learn, grow, and
-            take on new challenges!
-          </p>
+
+          <ul>
+            <li>
+              <span className="font-semibold text-white text-base sm:text-lg mb-6 lg:text-xl">
+                Currently Learning
+              </span>
+              <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+                Web development using the MERN stack (MongoDB, Express, React,
+                Node.js).
+              </p>
+            </li>
+            <li>
+              <span className="font-semibold text-white text-base sm:text-lg mb-6 lg:text-xl">
+                Projects
+              </span>
+              <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+                I've built multiple web applications that demonstrate my skills
+                in creating responsive and interactive user interfaces scuh as a{" "}
+                <Link
+                  href="https://www.botify.freewebhostmost.com/"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-semibold hover:underline">
+                  Spotify Clone
+                </Link> and <Link
+                  href="https://www.botify.freewebhostmost.com/"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-semibold hover:underline">
+                  Todo list using react
+                </Link> and some others
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

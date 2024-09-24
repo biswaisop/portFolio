@@ -28,7 +28,7 @@ const Navbar = () => {
   const [navbarOpen, setnavbarOpen] = useState(false);
   const [AnimationCount, setAnimationCount] = useState(0);
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#121212] sm:opacity-90 opacity-100 z-10 py-2">
+    <nav className="fixed top-0 left-0 right-0 bg-[#121212] sm:opacity-100 opacity-100 z-10 py-2">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
         <Link
           href={"/"}
@@ -45,11 +45,11 @@ const Navbar = () => {
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
-            <button onClick={() => setnavbarOpen(true)} className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white">
+            <button onClick={() => setnavbarOpen(true)} className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white ">
               <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
-            <button onClick={() => setnavbarOpen(false)} className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white">
+            <button onClick={() => setnavbarOpen(false)} className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white ">
               <XMarkIcon className="h-5 w-5" />
             </button>
           )}
