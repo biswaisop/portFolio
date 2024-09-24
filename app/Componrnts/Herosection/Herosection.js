@@ -21,7 +21,7 @@ const Herosection = () => {
               repeat={0} // Animation runs once
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl ">
             I am a Computer Science Engineering student in my first semester at
             RV Institute of Technology and Management (RVITM). I am passionate
             about learning web development, app development, and data science,
