@@ -34,16 +34,16 @@ const AboutSection = () => {
 
           <ul>
             <li>
-              <span className="font-semibold text-white text-base sm:text-lg mb-6 lg:text-xl">
+              <span className="font-semibold text-white text-base sm:text-lg mb-6 lg:text-xl ">
                 Currently Learning
               </span>
-              <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+              <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl ">
                 Web development using the MERN stack (MongoDB, Express, React,
                 Node.js).
               </p>
             </li>
             <li>
-              <span className="font-semibold text-white text-base sm:text-lg mb-6 lg:text-xl">
+              <span className="font-semibold text-white text-base sm:text-lg mb-6 lg:text-xl ">
                 Projects
               </span>
               <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
@@ -51,11 +51,11 @@ const AboutSection = () => {
                 in creating responsive and interactive user interfaces scuh as a{" "}
                 <Link
                   href="https://www.botify.freewebhostmost.com/"
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-semibold hover:underline">
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-green-300 to-lime-500 font-semibold hover:underline">
                   Spotify Clone
                 </Link> and <Link
                   href="https://www.botify.freewebhostmost.com/"
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-semibold hover:underline">
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-green-300 to-lime-500 font-semibold hover:underline">
                   Todo list using react
                 </Link> and some others
               </p>
