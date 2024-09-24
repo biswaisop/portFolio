@@ -8,22 +8,23 @@ const AboutSection = () => {
   return (
     <section className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <div className="ml-4 lg:ml-8 mt-3 sm:mt-0 mb-8 sm:mb-0"> {/* Added margin-bottom */}
-          <Image
-            src={aboutImage}
-            width={500}
-            height={400}
-            className="rounded-lg"
-            alt="About Image"
-          />
-        </div>
-        <div className="text-center md:text-left ml-4 lg:ml-8 ">
+        <div className="ml-4 lg:ml-8 mt-3 sm:mt-0 mb-8 sm:mb-0">
+          {" "}
           <h1 className="font-extrabold text-4xl lg:text-6xl mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
               About {""}
             </span>
             Me
           </h1>
+          <Image
+            src={aboutImage}
+            width={500}
+            height={400}
+            className="rounded-lg md:mt-52 sm:mt-5"
+            alt="About Image"
+          />
+        </div>
+        <div className="text-center md:text-left sm:text-left ml-4 lg:ml-8 ">
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             I&apos;m passionate about web development and currently honing my
             skills with the MERN stack. I&apos;ve already built several projects
@@ -53,8 +54,8 @@ const AboutSection = () => {
             </span>
             <p className="text-[#ADB7BE] text-base sm:text-lg mt-2 mb-4 lg:text-xl">
               I&apos;ve built multiple web applications that demonstrate my
-              skills in creating responsive and interactive user interfaces
-              such as a{" "}
+              skills in creating responsive and interactive user interfaces such
+              as a{" "}
               <Link
                 href="https://www.botify.freewebhostmost.com/"
                 className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-green-300 to-lime-500 font-semibold hover:underline"
@@ -79,8 +80,8 @@ const AboutSection = () => {
           <div className="mb-5 px-5">
             <span className="font-semibold text-white pt-10">Python</span>
             <p className="text-[#ADB7BE] text-base sm:text-lg mt-2 mb-6 lg:text-xl ">
-              Developed several projects showcasing automation and
-              scripting skills.
+              Developed several projects showcasing automation and scripting
+              skills.
             </p>
           </div>
           <div className="mb-5 px-5">
@@ -92,12 +93,10 @@ const AboutSection = () => {
           <div className="mb-5 px-5">
             <span className="font-semibold text-white pt-10">Javascript</span>
             <p className="text-[#ADB7BE] text-base sm:text-lg mt-2 mb-6 lg:text-xl ">
-              Experienced in using JavaScript to create scripts for
-              frontend as well as backend logics and managing databases
-              using MongoDB.
+              Experienced in using JavaScript to create scripts for frontend as
+              well as backend logics and managing databases using MongoDB.
             </p>
           </div>
-
         </div>
       </div>
     </section>
