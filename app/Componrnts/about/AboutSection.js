@@ -3,8 +3,20 @@ import React from "react";
 import Image from "next/image";
 import aboutImage from "./images/used.png";
 import Link from "next/link";
+import { useState, useTransition } from "react";
+import TabButton from "./TabButton/TabButton";
 
 const AboutSection = () => {
+  const [Tab, setTab] = useState("skills")
+  const [startTransition, isPending] = useTransition()
+
+const handleTabChange = (id) => {
+  startTransition(()=>{
+    setTab(id)
+  })
+
+}
+
   return (
     <section className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
@@ -29,14 +41,11 @@ const AboutSection = () => {
             to manage and interact with databases effectively. I&apos;m excited
             to continue learning and take on new challenges in my tech journey.
           </p>
-          <div className="mb-8">
-            <span className="font-semibold text-white text-base sm:text-lg mb-6 lg:text-xl ">
-              Currently Learning
-            </span>
-            <p className="text-[#ADB7BE] text-base sm:text-lg mt-2 mb-6 lg:text-xl ">
-              Web development using the MERN stack (MongoDB, Express, React,
-              Node.js) and other frameworks.
-            </p>
+          <div className="flex flex-row mt-8">
+            <TabButton selectTab={()=> handleTabChange("Skills")} active={Tab==="Skills"}>{" "}Skills{" "}</TabButton>
+            <TabButton selectTab={()=> handleTabChange("Education")} active={Tab==="Education"}>{" "}Education{" "}</TabButton>
+            <TabButton selectTab={()=> handleTabChange("Experience")} active={Tab==="Experience"}>{" "}Experience{" "}</TabButton>
+            
           </div>
         </div>
         <Image
