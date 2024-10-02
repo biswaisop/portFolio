@@ -12,7 +12,7 @@ const AboutSection = () => {
       title: "Skills",
       id: "skills",
       content: (
-        <ul>
+        <ul className="flex gap-3">
           <li className="my-2">Node.js</li>
           <li className="my-2">Express</li>
           <li className="my-2">React.js</li>
