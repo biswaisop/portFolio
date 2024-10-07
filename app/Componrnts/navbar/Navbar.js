@@ -29,7 +29,7 @@ const Navbar = () => {
   const [AnimationCount, setAnimationCount] = useState(0);
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#121212] sm:opacity-100 opacity-100 z-10 py-2">
-      <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
+      <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4 ">
         <Link
           href={"/"}
           className="text-2xl md:text-5xl font-extrabold font-mono bg-gradient-to-r md:px-9 from-blue-400 via-cyan-400 to-green-400 text-transparent bg-clip-text"
