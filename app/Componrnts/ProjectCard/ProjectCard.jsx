@@ -26,12 +26,11 @@ const projectData = [
 const ProjectCard = () => {
   return (
     <div className="container mx-auto max-w-screen-xl py-10 flex justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
         {projectData.map((project) => (
           <div
             key={project.id}
-            className="bg-zinc-950 rounded-lg shadow shadow-zinc-800 text-white"
-            style={{ width: "400px" }}
+            className="bg-zinc-950 rounded-lg shadow shadow-zinc-800 text-white w-full sm:max-w-sm md:max-w-none"
           >
             <Image
               src={project.image}

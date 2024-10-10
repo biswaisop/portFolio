@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react"; // Removed useTransition
+import React, { useState } from "react"; 
 import Image from "next/image";
 import aboutImage from "./images/used.png";
 import TabButton from "./TabButton/TabButton";
