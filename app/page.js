@@ -1,6 +1,7 @@
 import Herosection from "@/app/Componrnts/Herosection/Herosection";
 import Navbar from "./Componrnts/navbar/Navbar";
 import AboutSection from "./Componrnts/about/AboutSection";
+import Projects from "./Componrnts/Projects/Projects";
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
         {/* Add margin to AboutSection */}
         <div className="md:mt-48"> {/* Adjust the value as needed */}
           <AboutSection />
+        </div>
+        <div className="md:mt-48">
+          <Projects />
         </div>
       </div>
     </main>
