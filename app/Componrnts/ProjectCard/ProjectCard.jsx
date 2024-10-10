@@ -50,7 +50,10 @@ const ProjectCard = () => {
               className="rounded-t-lg"
             />
             <div className="p-5">
-              <h5 className="text-xl font-semibold mb-2">{project.title}</h5>
+            <h5 className="text-xl font-semibold mb-2 font-mono bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
+  {project.title}
+</h5>
+
               <p>{project.description}</p>
             </div>
           </div>
