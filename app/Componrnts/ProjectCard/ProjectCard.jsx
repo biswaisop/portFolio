@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import project1 from "./images/project1.png";
 import project2 from "./images/project2.png";
+import project3 from "./images/project3.png";
 
 const projectData = [
   {
@@ -21,6 +22,15 @@ const projectData = [
     image: project1,
     tag: ["all", "web", "music"],
   },
+  {
+    id: 3,
+    title: "Todo List",
+    description:
+      "A simple to-do list app built using React, allowing users to add, edit, and delete tasks with a clean and user-friendly interface.",
+    image: project3,  
+    tag: ["all", "web", "productivity"],
+}
+ 
 ];
 
 const ProjectCard = () => {
