@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Navlink from "../Navlink/Navlink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -12,12 +11,10 @@ const navLinks = [
     title: "About",
     path: "#about",
   },
-
   {
     title: "Projects",
     path: "#projects",
   },
-
   {
     title: "Contact",
     path: "#contact",
@@ -27,9 +24,32 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setnavbarOpen] = useState(false);
   const [AnimationCount, setAnimationCount] = useState(0);
+  const [scrollBlur, setScrollBlur] = useState(false); // state to track scroll
+
+  // Add a scroll event listener to toggle the blur effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrollBlur(true); // Add blur when scrolled down
+      } else {
+        setScrollBlur(false); // Remove blur when near top
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#121212] sm:opacity-100 opacity-100 z-10 py-2">
-      <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4 ">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-10 py-2 transition-all duration-300 ${
+        scrollBlur ? "bg-background/60 backdrop-blur-lg" : "bg-background/50"
+      }`}
+    >
+      <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
         <Link
           href={"/"}
           className="text-2xl md:text-5xl font-extrabold font-mono bg-gradient-to-r md:px-9 from-blue-400 via-cyan-400 to-green-400 text-transparent bg-clip-text"
@@ -45,11 +65,17 @@ const Navbar = () => {
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
-            <button onClick={() => setnavbarOpen(true)} className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white hover:underline">
+            <button
+              onClick={() => setnavbarOpen(true)}
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white hover:underline"
+            >
               <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
-            <button onClick={() => setnavbarOpen(false)} className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white hover:underline">
+            <button
+              onClick={() => setnavbarOpen(false)}
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white hover:underline"
+            >
               <XMarkIcon className="h-5 w-5" />
             </button>
           )}
@@ -64,7 +90,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {navbarOpen ? <Menuoverlay/>:null}
+      {navbarOpen ? <Menuoverlay /> : null}
     </nav>
   );
 };
