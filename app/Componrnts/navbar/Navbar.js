@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import Navlink from "../Navlink/Navlink";
@@ -24,30 +24,10 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setnavbarOpen] = useState(false);
   const [AnimationCount, setAnimationCount] = useState(0);
-  const [scrollBlur, setScrollBlur] = useState(false); // state to track scroll
-
-  // Add a scroll event listener to toggle the blur effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrollBlur(true); // Add blur when scrolled down
-      } else {
-        setScrollBlur(false); // Remove blur when near top
-      }
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-10 py-2 transition-all duration-300 ${
-        scrollBlur ? "bg-background/60 backdrop-blur-lg" : "bg-background/50"
-      }`}
+      className="fixed top-0 left-0 right-0 z-10 py-2 bg-background/60 backdrop-blur-lg transition-all duration-300"
     >
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
         <Link
