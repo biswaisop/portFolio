@@ -63,7 +63,7 @@ const AboutSection = () => {
   ];
 
   const handleTabChange = (id) => {
-    setTab(id); // Just use setTab for tab switching
+    setTab(id); 
   };
 
   return (

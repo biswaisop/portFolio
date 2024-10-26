@@ -13,7 +13,7 @@ export default function Home() {
         <div className="md:mt-48"> {/* Adjust the value as needed */}
           <AboutSection />
         </div>
-        <div className="md:mt-48">
+        <div className="md:mt-44">
           <Projects />
         </div>
       </div>
