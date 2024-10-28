@@ -3,7 +3,7 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 
 const Projects = () => {
   return (
-    <div className="container max-w-screen-xl mx-14 sm:mx-auto">
+    <div className="container max-w-screen-xl md:mx-14 sm:mx-auto">
       <div className="ml-4 lg:ml-8 mt-3 sm:mt-0 mb-8 sm:mb-0">
         <div className="">
           <h1 className="font-extrabold text-4xl lg:text-6xl mb-4 text-left">
