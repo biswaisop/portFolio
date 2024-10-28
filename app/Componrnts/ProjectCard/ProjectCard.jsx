@@ -4,6 +4,7 @@ import Image from "next/image";
 import project1 from "./images/project1.png";
 import project2 from "./images/project2.png";
 import project3 from "./images/project3.png";
+import Link from "next/link";
 
 const projectData = [
   {
@@ -13,6 +14,7 @@ const projectData = [
       "A personal portfolio built with React, showcasing projects, skills, and contact information. Designed with responsive layouts and smooth animations.",
     image: project2,
     tag: ["all", "web"],
+    link:"/"
   },
   {
     id: 2,
@@ -21,6 +23,7 @@ const projectData = [
       "A Spotify-inspired music streaming app built using React, featuring playlist creation, song browsing, and playback functionality with a clean UI.",
     image: project1,
     tag: ["all", "web", "music"],
+    link:"https://www.botify.freewebhostmost.com/"
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ const projectData = [
       "A simple to-do list app built using React, allowing users to add, edit, and delete tasks with a clean and user-friendly interface.",
     image: project3,
     tag: ["all", "web", "productivity"],
+    link:"https://biswaisop.github.io/ToDoList/"
   },
 ];
 
@@ -49,9 +53,10 @@ const ProjectCard = () => {
               className="rounded-t-lg"
             />
             <div className="p-5">
-              <h5 className="text-xl font-semibold mb-2 font-mono bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
-                {project.title}
-              </h5>
+              <Link rel="stylesheet" href={project.link} target="_blank">
+                <h5 className="text-xl font-semibold mb-2 font-mono bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
+                  {project.title}
+                </h5></Link>
 
               <p>{project.description}</p>
             </div>
