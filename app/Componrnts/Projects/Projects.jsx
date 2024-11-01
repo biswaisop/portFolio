@@ -13,7 +13,7 @@ const Projects = () => {
             Projects
           </h1>
         </div>
-        <div className="mt-7">
+        <div className="mt-12">
           <ProjectCard/>
         </div>
       </div>
