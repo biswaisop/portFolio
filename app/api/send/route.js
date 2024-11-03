@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import Email from "@/app/email/Email";
 import ReactDOMServer from "react-dom/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(re_DpPKHqNM_Cf5p16oMTNyUR7zk4KTYGeVA);
 
 export async function POST() {
   const emailHtml = ReactDOMServer.renderToStaticMarkup(<Email />);
