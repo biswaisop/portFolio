@@ -22,11 +22,13 @@ export default function Home() {
           <AboutSection />
           <div className="hidden sm:block">
             <Spline
+              
               scene="https://prod.spline.design/ZVJZWee5qdSNAsDl/scene.splinecode"
               className="z-10 "
             />
           </div>
           <div className="bg-black w-1/3 text-black absolute top-[184%] p-10 right-[1%] z-20 hidden sm:block pointer-events-none"></div>
+          {/* <div className="bg-black w-1/3 text-black absolute top-[174%] p-10 right-[1%] z-20 hidden sm:block pointer-events-none"></div> */}
         </div>
         <div className="md:mt-44">
           <Projects />
