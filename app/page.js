@@ -14,7 +14,7 @@ export default function Home() {
           <Herosection />
           <Spline
             scene="https://prod.spline.design/yv4uaSaX5JrJ3jgv/scene.splinecode"
-            className="z-10 absolute left-[15%] bottom-[5%] hidden sm:block pointer-events-none"
+            className="z-10 absolute left-[15%] bottom-[5%] hidden sm:block pointer-events-none "
           />
         </div>
         {/* Add margin to AboutSection */}

@@ -90,7 +90,7 @@ const AboutSection = () => {
             to manage and interact with databases effectively. I&apos;m excited
             to continue learning and take on new challenges in my tech journey.
           </p>
-          <div className="flex flex-row mt-8">
+          <div className="flex flex-row mt-8 h-full">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={Tab === "skills"}
