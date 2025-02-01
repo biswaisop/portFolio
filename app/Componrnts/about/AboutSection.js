@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import aboutImage from "./images/used.png";
 import TabButton from "./TabButton/TabButton";
+import Spline from "@splinetool/react-spline/next";
 
 const AboutSection = () => {
   const [Tab, setTab] = useState("skills");
@@ -68,7 +69,7 @@ const AboutSection = () => {
 
   return (
     <section className="text-white">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <div className="ml-4 lg:ml-8 mt-3 sm:mt-0 mb-8 sm:mb-0">
           <h1 className="font-extrabold text-4xl lg:text-6xl mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
@@ -113,13 +114,16 @@ const AboutSection = () => {
             {Tabdata.find((t) => t.id === Tab).content}
           </div>
         </div>
-        <Image
+        {/* <Image
           src={aboutImage}
           width={500}
           height={400}
           className="rounded-lg md:mt-50 md:ml-12 sm:mt-5"
           alt="About Image"
-        />
+        /> */}
+        {/* <Spline
+                scene="https://prod.spline.design/ZVJZWee5qdSNAsDl/scene.splinecode" className="z-10 absolute left-[15%] bottom-[5%]"
+              /> */}
       </div>
     </section>
   );

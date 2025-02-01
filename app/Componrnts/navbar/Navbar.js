@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-10 py-2 bg-background/60 backdrop-blur-lg transition-all duration-300"
+      className="fixed top-0 left-0 right-0 py-2 bg-background/60 backdrop-blur-lg transition-all duration-300 z-30"
     >
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
         <Link
