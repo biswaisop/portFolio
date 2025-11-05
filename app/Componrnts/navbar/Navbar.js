@@ -24,10 +24,24 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setnavbarOpen] = useState(false);
   const [AnimationCount, setAnimationCount] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 py-2 bg-background/60 backdrop-blur-lg transition-all duration-300 z-30"
+      className={`fixed top-0 left-0 right-0 py-2 transition-all duration-300 z-30 ${
+        scrolled
+          ? "bg-black/80 backdrop-blur-lg shadow-lg shadow-purple-500/10"
+          : "bg-transparent"
+      }`}
     >
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-4">
         <Link
@@ -70,7 +84,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {navbarOpen ? <Menuoverlay /> : null}
+      {navbarOpen ? <Menuoverlay onLinkClick={() => setnavbarOpen(false)} /> : null}
     </nav>
   );
 };

@@ -42,43 +42,65 @@ const projectData = [
 
 const ProjectCard = () => {
   return (
-    <div className="container mx-auto max-w-screen-xl py-10 flex justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
-        {projectData.map((project) => (
-          <div
-            key={project.id}
-            className="relative bg-zinc-950 rounded-lg shadow shadow-zinc-800 text-white w-full sm:max-w-sm md:max-w-none transition-transform duration-300 transform hover:scale-105 group"
-          >
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projectData.map((project) => (
+        <div
+          key={project.id}
+          className="group relative bg-zinc-900 rounded-2xl shadow-xl border border-zinc-800 text-white overflow-hidden transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2"
+        >
+          <div className="relative overflow-hidden aspect-video">
             <Image
               src={project.image}
               width={400}
-              height={400}
+              height={300}
               style={{ objectFit: "cover" }}
-              className="rounded-t-lg"
+              className="rounded-t-2xl w-full h-full transition-transform duration-500 group-hover:scale-110"
               alt={`${project.title} image`}
             />
             
             {/* Overlay with icons */}
-            <div className="absolute inset-0 bg-gray-700 opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-t-lg flex items-center justify-center space-x-5">
-              <Link href={project.codeLink} target="_blank">
-                <FaCode className="text-white text-2xl cursor-pointer hover:text-blue-400" title="View Code" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-6">
+              <Link 
+                href={project.codeLink} 
+                target="_blank"
+                className="flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                <FaCode className="text-white text-xl" />
+                <span className="text-white font-semibold text-sm">Code</span>
               </Link>
-              <Link href={project.link} target="_blank">
-                <FaExternalLinkAlt className="text-white text-2xl cursor-pointer hover:text-blue-400" title="View Project" />
+              <Link 
+                href={project.link} 
+                target="_blank"
+                className="flex items-center gap-2 px-6 py-3 bg-purple-500/80 backdrop-blur-sm rounded-full border border-purple-400/50 hover:bg-purple-600 transition-all duration-300"
+              >
+                <FaExternalLinkAlt className="text-white text-lg" />
+                <span className="text-white font-semibold text-sm">Live</span>
               </Link>
-            </div>
-
-            <div className="p-5">
-              <Link href={project.link} target="_blank">
-                <h5 className="text-xl font-semibold mb-2 font-mono bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
-                  {project.title}
-                </h5>
-              </Link>
-              <p>{project.description}</p>
             </div>
           </div>
-        ))}
-      </div>
+
+          <div className="p-6 space-y-3">
+            <Link href={project.link} target="_blank">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent hover:from-purple-400 hover:via-pink-400 hover:to-red-400 transition-all duration-300">
+                {project.title}
+              </h3>
+            </Link>
+            <p className="text-zinc-400 text-sm leading-relaxed line-clamp-3">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {project.tag.slice(1).map((tag, index) => (
+                <span 
+                  key={index}
+                  className="px-3 py-1 text-xs font-medium bg-purple-500/10 text-purple-400 rounded-full border border-purple-500/20"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
