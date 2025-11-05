@@ -66,7 +66,7 @@ const Footer = () => {
                 <FaGithub className="text-lg text-zinc-400 group-hover:text-purple-400 transition-colors" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/biswadip-mandal-76b65222b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-10 h-10 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
@@ -74,7 +74,7 @@ const Footer = () => {
                 <FaLinkedin className="text-lg text-zinc-400 group-hover:text-purple-400 transition-colors" />
               </a>
               <a
-                href="#"
+                href="https://x.com/Biswa_codes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-10 h-10 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"

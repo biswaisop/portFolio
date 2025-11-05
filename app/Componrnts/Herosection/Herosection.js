@@ -48,12 +48,13 @@ const Herosection = () => {
               <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform"></span>
             </a>
             <a
-              href="/cv.pdf"
-              download
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group px-8 py-4 w-full sm:w-fit rounded-full text-white font-bold bg-transparent border-2 border-purple-500 hover:bg-purple-500/10 transition-all duration-300 text-center"
             >
               Download CV
-              <span className="inline-block ml-2 group-hover:translate-y-1 transition-transform"></span>
+              
             </a>
           </div>
         </div>
