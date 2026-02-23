@@ -1,184 +1,148 @@
 "use client";
-import React, { useState } from "react";
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const formRef = useRef(null);
+  const [status, setStatus] = useState({ type: "idle", message: "" });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus({ type: "loading", message: "Sending message..." });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
+      );
+
+      formRef.current.reset();
+      setStatus({ type: "success", message: "Message sent successfully." });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    }
   };
 
   return (
-    <section id="contact" className="py-20 bg-zinc-900/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-extrabold text-4xl lg:text-6xl mb-4 text-white">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-              Get In{" "}
-            </span>
-            Touch
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-          <p className="mt-6 text-[#ADB7BE] text-lg max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to reach out!
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Let&apos;s Connect
-              </h3>
-              <p className="text-[#ADB7BE] leading-relaxed mb-8">
-                I&apos;m currently looking for new opportunities and my inbox is
-                always open. Whether you have a question or just want to say
-                hi, I&apos;ll try my best to get back to you!
-              </p>
-            </div>
-
-            {/* Social Links */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-purple-400 mb-4">
-                Connect with me
-              </h4>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/biswaisop"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-center w-12 h-12 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-                >
-                  <FaGithub className="text-xl text-zinc-400 group-hover:text-purple-400 transition-colors" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/biswadip-mandal-76b65222b/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-center w-12 h-12 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-                >
-                  <FaLinkedin className="text-xl text-zinc-400 group-hover:text-purple-400 transition-colors" />
-                </a>
-                <a
-                  href="https://x.com/Biswa_codes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-center w-12 h-12 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-                >
-                  <FaTwitter className="text-xl text-zinc-400 group-hover:text-purple-400 transition-colors" />
-                </a>
-                <a
-                  href="mailto:biswaman04@gmail.com"
-                  className="group flex items-center justify-center w-12 h-12 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-                >
-                  <FaEnvelope className="text-xl text-zinc-400 group-hover:text-purple-400 transition-colors" />
-                </a>
-              </div>
-            </div>
+    <section id="contact" className="py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-white/40 bg-white/60 p-6 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-zinc-900/50 sm:p-8">
+          <div className="mb-10">
+            <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-zinc-900 dark:text-zinc-100">
+              Contact
+            </h2>
+            <p className="mt-3 text-[clamp(1rem,1.4vw,1.125rem)] text-zinc-600 max-w-2xl dark:text-zinc-300">
+              Open to AI and backend engineering internships. Reach out directly
+              for opportunities or collaboration.
+            </p>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-zinc-900/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-zinc-300 mb-2"
-                >
-                  Your Name
-                </label>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="rounded-2xl border border-zinc-200/70 bg-white/80 p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950/60"
+            >
+            <div className="grid gap-4 sm:grid-cols-2">
+                <label className="text-sm text-zinc-600 dark:text-zinc-300">
+                Name
                 <input
                   type="text"
-                  id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                  placeholder="John Doe"
+                    className="mt-2 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-900 focus:border-[#1e3a8a] focus:outline-none dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
                 />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-zinc-300 mb-2"
-                >
-                  Your Email
-                </label>
+              </label>
+                <label className="text-sm text-zinc-600 dark:text-zinc-300">
+                Email
                 <input
                   type="email"
-                  id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                  placeholder="john@example.com"
+                    className="mt-2 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-900 focus:border-[#1e3a8a] focus:outline-none dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
                 />
-              </div>
+              </label>
+            </div>
 
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-zinc-300 mb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                  placeholder="Let's work together"
-                />
-              </div>
+              <label className="mt-4 block text-sm text-zinc-600 dark:text-zinc-300">
+              Subject
+              <input
+                type="text"
+                name="subject"
+                required
+                  className="mt-2 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-900 focus:border-[#1e3a8a] focus:outline-none dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
+              />
+            </label>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-zinc-300 mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"
-                  placeholder="Your message here..."
-                />
-              </div>
+              <label className="mt-4 block text-sm text-zinc-600 dark:text-zinc-300">
+              Message
+              <textarea
+                name="message"
+                rows={5}
+                required
+                  className="mt-2 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-900 focus:border-[#1e3a8a] focus:outline-none dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
+              />
+            </label>
 
-              <button
-                type="submit"
-                className="w-full px-8 py-4 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white font-bold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+            <button
+              type="submit"
+              disabled={status.type === "loading"}
+              className="mt-6 w-full rounded-full bg-[#1e3a8a] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#1a347a] disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              Send Message
+            </button>
+
+            {status.type !== "idle" && (
+              <p
+                className={`mt-4 text-sm ${
+                  status.type === "success"
+                    ? "text-emerald-600"
+                    : status.type === "error"
+                    ? "text-red-600"
+                    : "text-zinc-500"
+                }`}
               >
-                Send Message
-              </button>
+                {status.message}
+              </p>
+            )}
             </form>
+
+            <div className="grid gap-4">
+              {[
+                {
+                  label: "GitHub",
+                  value: "github.com/biswaisop",
+                  href: "https://github.com/biswaisop",
+                },
+                {
+                  label: "LinkedIn",
+                  value: "linkedin.com/in/biswadip-mandal-76b65222b",
+                  href: "https://www.linkedin.com/in/biswadip-mandal-76b65222b/",
+                },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="rounded-2xl border border-zinc-200/70 bg-white/80 p-5 text-sm text-zinc-600 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-300"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                    {item.value}
+                  </p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

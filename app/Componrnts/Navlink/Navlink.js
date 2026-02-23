@@ -24,7 +24,7 @@ const Navlink = ({ href, title }) => {
     <Link
       href={href}
       onClick={handleClick}
-      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm: text-xl rounded md: p-0 hover:text-white "
+      className="block px-1 py-2 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
     >
       {title}
     </Link>

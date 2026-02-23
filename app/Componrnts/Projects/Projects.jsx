@@ -4,20 +4,19 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 const Projects = () => {
   return (
     <section id="projects" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-extrabold text-4xl lg:text-6xl mb-4 text-white">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-              My{" "}
-            </span>
-            Projects
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-          <p className="mt-6 text-[#ADB7BE] text-lg max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for web development
-          </p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-white/40 bg-white/60 p-6 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-zinc-900/50 sm:p-8">
+          <div className="mb-10">
+            <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-zinc-900 dark:text-zinc-100">
+              Projects
+            </h2>
+            <p className="mt-3 text-[clamp(1rem,1.4vw,1.125rem)] text-zinc-600 max-w-2xl dark:text-zinc-300">
+              Selected work focused on backend systems, AI workflows, and reliable
+              data pipelines.
+            </p>
+          </div>
+          <ProjectCard />
         </div>
-        <ProjectCard />
       </div>
     </section>
   );

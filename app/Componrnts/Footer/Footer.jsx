@@ -1,100 +1,38 @@
 import React from "react";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-zinc-900 border-t border-zinc-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
+    <footer className="relative border-t border-white/40 bg-white/60 backdrop-blur before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-4 before:bg-white/40 before:blur-lg before:content-[''] dark:border-white/10 dark:bg-zinc-950/60 dark:before:bg-white/10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <Link
-              href="/"
-              className="text-2xl font-extrabold font-mono bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 text-transparent bg-clip-text inline-block mb-4"
-            >
-              &lt;Biswa_Man/&gt;
+            <Link href="/" className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              Biswadip Mandal
             </Link>
-            <p className="text-zinc-400 text-sm">
-              Building digital experiences with passion and creativity.
+            <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+              Software Developer
             </p>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#about"
-                  className="text-zinc-400 hover:text-purple-400 transition-colors text-sm"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#projects"
-                  className="text-zinc-400 hover:text-purple-400 transition-colors text-sm"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="text-zinc-400 hover:text-purple-400 transition-colors text-sm"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Follow Me</h3>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/biswaisop"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center w-10 h-10 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-              >
-                <FaGithub className="text-lg text-zinc-400 group-hover:text-purple-400 transition-colors" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/biswadip-mandal-76b65222b/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center w-10 h-10 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-              >
-                <FaLinkedin className="text-lg text-zinc-400 group-hover:text-purple-400 transition-colors" />
-              </a>
-              <a
-                href="https://x.com/Biswa_codes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center w-10 h-10 bg-zinc-800 rounded-full border border-zinc-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
-              >
-                <FaTwitter className="text-lg text-zinc-400 group-hover:text-purple-400 transition-colors" />
-              </a>
-            </div>
+          <div className="flex flex-wrap gap-4 text-sm text-zinc-600 dark:text-zinc-300">
+            <Link href="#about" className="hover:text-zinc-900 dark:hover:text-white">
+              About
+            </Link>
+            <Link href="#skills" className="hover:text-zinc-900 dark:hover:text-white">
+              Skills
+            </Link>
+            <Link href="#projects" className="hover:text-zinc-900 dark:hover:text-white">
+              Projects
+            </Link>
+            <Link href="#contact" className="hover:text-zinc-900 dark:hover:text-white">
+              Contact
+            </Link>
           </div>
         </div>
-
-        {/* Bottom */}
-        <div className="border-t border-zinc-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-zinc-500 text-sm">
-              © {currentYear} Biswadip Mandal. All rights reserved.
-            </p>
-            <p className="text-zinc-500 text-sm flex items-center gap-2">
-              Made with <FaHeart className="text-red-500 animate-pulse" /> using Next.js & Tailwind CSS
-            </p>
-          </div>
+        <div className="mt-8 border-t border-zinc-200 pt-6 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+          © {currentYear} Biswadip Mandal. All rights reserved.
         </div>
       </div>
     </footer>

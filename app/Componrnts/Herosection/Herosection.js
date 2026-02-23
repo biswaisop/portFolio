@@ -1,82 +1,54 @@
 "use client";
-import { useState } from "react";
 import React from "react";
 import Image from "next/image";
 import DesignerImage from "./images/file.png";
-import { TypeAnimation } from "react-type-animation";
 
 
 const Herosection = () => {
   return (
-    <section className="min-h-[80vh] flex items-center">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 px-5 w-full">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
-          <div className="mb-4">
-          </div>
-          <h1 className="text-white mb-6 font-extrabold text-4xl lg:text-7xl leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-              Hello, I&apos;m <br className="hidden sm:block" />
-            </span>
-            <TypeAnimation
-              sequence={[
-                "an AI developer",
-                2000,
-                "a Web Developer",
-                2000,
-                "a Problem Solver",
-                2000,
-                "Biswadip Mandal",
-                2000,
-              ]}
-              wrapper="div"
-              speed={50}
-              className="block mt-2"
-            />
-          </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-8 lg:text-xl max-w-2xl leading-relaxed">
-            Third-semester Computer Science Engineering student at RVITM,
-            passionate about crafting elegant web solutions. Specializing in{" "}
-            <span className="text-purple-400 font-semibold">Backend Development</span> with a keen
-            interest in AI/ML, data science and RAG systems.
+    <section className="min-h-[70vh] py-10 sm:py-16">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
+        <div className="lg:col-span-7">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+            Biswadip Mandal
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
-            <a
-              href="#contact"
-              className="group px-8 py-4 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white font-bold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 text-center"
-            >
-              Let&apos;s Connect
-              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform"></span>
-            </a>
+          <h1 className="mt-4 text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-tight text-zinc-900 dark:text-zinc-100">
+            Software Developer
+          </h1>
+          <p className="mt-5 text-[clamp(1rem,1.5vw,1.25rem)] text-zinc-600 max-w-2xl dark:text-zinc-300">
+            I design and build modern web applications, backend services, and data-driven systems with a focus on scalability and maintainability.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group px-8 py-4 w-full sm:w-fit rounded-full text-white font-bold bg-transparent border-2 border-purple-500 hover:bg-purple-500/10 transition-all duration-300 text-center"
+              download
+              className="w-full rounded-full bg-[#1e3a8a] px-6 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#1a347a] sm:w-auto"
             >
-              Download CV
-              
+              Download Resume
+            </a>
+            <a
+              href="#contact"
+              className="w-full rounded-full border border-white/60 bg-white/60 px-6 py-3 text-center text-sm font-semibold text-zinc-900 shadow-sm backdrop-blur transition-colors hover:border-white/80 dark:border-white/10 dark:bg-zinc-900/60 dark:text-zinc-100 dark:hover:border-white/20 sm:w-auto"
+            >
+              Contact
             </a>
           </div>
         </div>
-        <div className="col-span-5 place-self-center mt-6 lg:mt-0">
-          <div className="relative">
-            
-              <div className="rounded-full bg-[#252525] w-[230px] h-[230px] lg:w-[370px] lg:h-[370px] flex justify-center items-center relative overflow-hidden">
-                <Image
-                  src={DesignerImage}
-                  alt="Biswadip Mandal - Portfolio"
-                  width={350}
-                  height={350}
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 hover:scale-110 transition-transform duration-300"
-                  priority
-                />
-              </div>
+        <div className="lg:col-span-5">
+          <div className="mx-auto w-56 sm:w-64 lg:w-72">
+            <div className="rounded-3xl border border-zinc-200 bg-white/80 p-3 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/60">
+              <Image
+                src={DesignerImage}
+                alt="Biswadip Mandal"
+                width={500}
+                height={500}
+                className="h-auto w-full rounded-2xl object-cover"
+                priority
+              />
             </div>
-            {/* Floating elements for visual interest */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-500/20 rounded-full blur-xl animate-bounce"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-pink-500/20 rounded-full blur-xl animate-bounce" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
+      </div>
     </section>
   );
 };

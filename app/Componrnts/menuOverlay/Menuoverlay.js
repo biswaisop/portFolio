@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Navlink from "../Navlink/Navlink";
@@ -9,6 +10,10 @@ const Menuoverlay = ({ onLinkClick }) => {
       path: "#about",
     },
 
+    {
+      title: "Skills",
+      path: "#skills",
+    },
     {
       title: "Projects",
       path: "#projects",
@@ -41,13 +46,15 @@ const Menuoverlay = ({ onLinkClick }) => {
   };
   
   return (
-    <ul className="flex flex-col py-4 items-center">
-      {links.map((link, index) => (
-        <li key={index} onClick={(e) => handleClick(e, link.path)}>
-          <Navlink href={link.path} title={link.title} />
-        </li>
-      ))}
-    </ul>
+    <div className="border-t border-zinc-200 bg-[#f8f7f4] dark:border-zinc-800 dark:bg-zinc-950">
+      <ul className="flex flex-col px-4 py-4">
+        {links.map((link, index) => (
+          <li key={index} onClick={(e) => handleClick(e, link.path)}>
+            <Navlink href={link.path} title={link.title} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
