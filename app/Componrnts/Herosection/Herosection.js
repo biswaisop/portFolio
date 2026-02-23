@@ -21,7 +21,7 @@ const Herosection = () => {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="/resume.pdf"
-              download
+              download="Biswadip_Mandal_Resume.pdf"
               className="w-full rounded-full bg-[#1e3a8a] px-6 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#1a347a] sm:w-auto"
             >
               Download Resume
