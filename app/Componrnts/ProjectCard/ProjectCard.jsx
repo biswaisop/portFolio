@@ -6,14 +6,21 @@ const projects = [
     description:
       "Designed a multi-tenant RAG assistant for hotel FAQs and booking flows with memory-aware routing and cost-conscious retrieval.",
     tags: ["RAG", "Multi-tenant", "Vector DB", "Backend"],
-    github: "https://github.com/biswaisop",
+    github: "https://github.com/biswaisop/engage-prototype",
   },
   {
     title: "Algeria Forest Fires Prediction",
     description:
       "Built a prediction pipeline using structured data preprocessing, model evaluation, and API-based inference for wildfire risk.",
     tags: ["ML", "Data pipelines", "FastAPI"],
-    github: "https://github.com/biswaisop",
+    github: "https://github.com/biswaisop/Algeria-forest-fires",
+  },
+  {
+    title: "Height Vs. Weight Prediction",
+    description:
+      "Developed a regression model to predict weight based on height using a publicly available Kaggle dataset. This project was part of my machine learning learning process and focused on understanding the end-to-end ML workflow.",
+    tags: ["ML", "Data pipelines", "FastAPI"],
+    github: "https://github.com/biswaisop/Height-Weight-Prediction",
   },
 ];
 
