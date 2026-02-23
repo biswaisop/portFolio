@@ -16,7 +16,7 @@ const Contact = () => {
         "template_i44wek3",
         formRef.current,
         {
-          publicKey: "MewtqevsXxA7zoUya"
+          publicKey: "MewtqevsXxA7zoUya",
         }
       );
 
