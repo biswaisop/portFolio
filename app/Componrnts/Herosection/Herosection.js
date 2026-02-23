@@ -20,7 +20,7 @@ const Herosection = () => {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1NEWkAB1Tsa2hqy2HxSuCJiITmxaeqZTy/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full rounded-full bg-[#1e3a8a] px-6 py-3 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#1a347a] sm:w-auto"
