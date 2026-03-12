@@ -1,6 +1,7 @@
 import Herosection from "@/app/Componrnts/Herosection/Herosection";
 import Navbar from "./Componrnts/navbar/Navbar";
 import AboutSection from "./Componrnts/about/AboutSection";
+import Experience from "./Componrnts/Experience/Experience";
 import Projects from "./Componrnts/Projects/Projects";
 import Skills from "./Componrnts/Skills/Skills";
 import Contact from "./Componrnts/Contact/Contact";
@@ -30,6 +31,10 @@ export default function Home() {
 
         <div className="mt-20 sm:mt-28">
           <AboutSection />
+        </div>
+
+        <div className="mt-16 sm:mt-24">
+          <Experience />
         </div>
 
         <div className="mt-16 sm:mt-24">
