@@ -9,6 +9,13 @@ const projects = [
     github: "https://github.com/biswaisop/engage-prototype",
   },
   {
+    title: "GenOS — Multi-Agent AI OS",
+    description:
+      "Built a multi-tenant AI operating system for natural language Linux control over Telegram and WhatsApp, with a multi-agent graph, sandboxed execution, and live WebSocket tracing.",
+    tags: ["LangGraph", "Multi-agent", "Docker", "FastAPI"],
+    github: "https://github.com/biswaisop/Genos",
+  },
+  {
     title: "Algeria Forest Fires Prediction",
     description:
       "Built a prediction pipeline using structured data preprocessing, model evaluation, and API-based inference for wildfire risk.",
