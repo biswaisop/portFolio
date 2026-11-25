@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { CurtainShape } from "./CurvedSection";
 import { calm, gsap, uncoverCurtain } from "./motion";
 
-const greetings = ["Hello", "Bonjour", "Namaste", "Hola", "Ciao", "こんにちは", "হযল"];
+const greetings = ["Hello", "Bonjour", "Namaste", "Hola", "Ciao", "こんにちは", "নমস্কার"];
 
 export default function Preloader() {
   const layer = useRef(null);
